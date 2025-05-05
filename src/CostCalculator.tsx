@@ -12,7 +12,7 @@ const CostCalculator: React.FC = () => {
   const [selectedApps, setSelectedApps] = useState<string[]>([]);
   const [areas, setAreas] = useState<{ [key: string]: number }>({});
   const [costs, setCosts] = useState<YearlyCosts[] | null>(null);
-  const [openCategory, setOpenCategory] = useState<string | null>(null);
+  const [openCategory, setOpenCategory] = useState<string | null>('GEMELO_DIGITAL');
   const [openHelp, setOpenHelp] = useState(false);
   const [selectedHelpApp, setSelectedHelpApp] = useState<Application | null>(null);
   const [expandedSections, setExpandedSections] = useState<{
@@ -103,13 +103,10 @@ const CostCalculator: React.FC = () => {
         </Box>
 
         <Box sx={{
-          display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
           gap: 4,
           p: 3
-
         }}>
-          <Box sx={{ flex: 1, }}>
+          <Box sx={{}}>
             <Box sx={{
               mb: 3,
             }}>
@@ -139,7 +136,7 @@ const CostCalculator: React.FC = () => {
 
           
             {costs && (
-              <Box sx={{flex: 0.5,}}>
+              <Box sx={{}}>
               <CostsTable
               costs={costs}
               selectedApps={selectedApps}

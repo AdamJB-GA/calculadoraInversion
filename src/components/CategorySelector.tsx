@@ -1,13 +1,12 @@
 import React from 'react';
 import {
   Box,
-  Button,
+  Tabs,
+  Tab,
   Typography,
   Checkbox,
   IconButton,
 } from '@mui/material';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import { Application } from '../types/calculator.types';
 import { AppList } from './AppList';
@@ -35,64 +34,46 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   handleOpenHelp,
   applications,
 }) => {
+  const categoryKeys = Object.keys(categories);
+
+  const handleTabChange = (event: React.SyntheticEvent, newValue: string) => {
+    setOpenCategory(newValue);
+  };
+
   return (
-    <>
-      {Object.entries(categories).map(([category, label]) => (
-        <Box
-          key={category}
-          sx={{
-            mb: 1,
-            border: 1,
-            borderColor: 'divider',
-            borderRadius: 1,
-          }}
-        >
-          <Button
-            fullWidth
-            onClick={() =>
-              setOpenCategory(openCategory === category ? null : category)
-            }
-            sx={{
-              justifyContent: 'space-between',
-              textTransform: 'none',
-              p: 2,
-              color: 'text.primary',
-              '&:hover': {
-                bgcolor: 'action.hover',
-              },
-            }}
-          >
-            <Typography variant="body1">{label}</Typography>
-            {openCategory === category ? (
-              <KeyboardArrowDownIcon />
-            ) : (
-              <KeyboardArrowRightIcon />
-            )}
-          </Button>
-          {openCategory === category && (
-            <Box sx={{ p: 2, borderTop: 1, borderColor: 'divider' }}>
-              {category === 'CAPA_DINAMICA' ? (
-                <CapaDinamicaItem 
-                  selectedApps={selectedApps}
-                  handleAppToggle={handleAppToggle}
-                  handleOpenHelp={handleOpenHelp}
-                  applications={applications}
-                />
-              ) : (
-                <AppList
-                  applications={applications.filter((app) => app.category === category)}
-                  selectedApps={selectedApps}
-                  handleAppToggle={handleAppToggle}
-                  handleAreaChange={handleAreaChange}
-                  areas={areas}
-                  handleOpenHelp={handleOpenHelp}
-                />
-              )}
-            </Box>
-          )}
-        </Box>
-      ))}
-    </>
+    <Box>
+      <Tabs
+        value={openCategory || categoryKeys[0]}
+        onChange={handleTabChange}
+        variant="scrollable"
+        scrollButtons="auto"
+        sx={{ mb: 2 }}
+      >
+        {categoryKeys.map((key) => (
+          <Tab key={key} label={categories[key]} value={key} />
+        ))}
+      </Tabs>
+
+      <Box sx={{ p: 2 }}>
+        {openCategory === 'CAPA_DINAMICA' ? (
+          <CapaDinamicaItem
+            selectedApps={selectedApps}
+            handleAppToggle={handleAppToggle}
+            handleOpenHelp={handleOpenHelp}
+            applications={applications}
+          />
+        ) : (
+          <AppList
+            applications={applications.filter((app) => app.category === openCategory)}
+            selectedApps={selectedApps}
+            handleAppToggle={handleAppToggle}
+            handleAreaChange={handleAreaChange}
+            areas={areas}
+            handleOpenHelp={handleOpenHelp}
+          />
+        )}
+      </Box>
+    </Box>
   );
 };
 
@@ -118,30 +99,22 @@ const CapaDinamicaItem: React.FC<CapaDinamicaItemProps> = ({
         gap: 1,
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: 1,
-          px: 2,
-        }}
-      >
+      <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
         <Checkbox
           checked={selectedApps.includes('capa_dinamica')}
           onChange={() => handleAppToggle('capa_dinamica')}
           size="small"
         />
-        <Typography variant="body2" style={{color: 'black'}}>Capa Dinámica</Typography>
+        <Typography variant="body2" style={{ color: 'black' }}>
+          Capa Dinámica
+        </Typography>
       </Box>
-      <Typography variant='body2' color='text.secondary' style={{'fontSize': 'xx-small'}}>Servicio base necesario. Se aplicará automáticamente al seleccionar cualquier servicio que no sea el Gemelo Digital</Typography>
+      <Typography variant="body2" color="text.secondary" fontSize="xx-small">
+        Servicio base necesario. Se aplicará automáticamente al seleccionar cualquier servicio que no sea el Gemelo Digital
+      </Typography>
       <IconButton
-        sx={{ marginLeft: 1 }}
         onClick={() =>
-          handleOpenHelp(
-            applications.find(
-              (app) => app.id === 'capa_dinamica',
-            )!,
-          )
+          handleOpenHelp(applications.find((app) => app.id === 'capa_dinamica')!)
         }
       >
         <HelpOutlineIcon fontSize="small" />
