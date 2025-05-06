@@ -26,6 +26,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   handleOpenHelp,
   applications,
 }) => {
+  console.log(applications)
   return (
     <div className="bg-gray-900 p-6 rounded-lg">
       {/* Header horizontal de categorías */}

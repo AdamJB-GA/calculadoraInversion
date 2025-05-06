@@ -99,7 +99,7 @@ export const applications: Application[] = [
     name: 'Optimización de Recogida de Residuos',
     fixedCost: 25000,
     variableCost: 90,
-    category: 'GESTIÓN RESIDUOS',
+    category: 'GESTIÓN_RESIDUOS',
     help: 'Status updates of containers (malfunction, fill levels, etc.). Analysis of environmental variables. Prediction of container fill levels. Identification of overconsumption patterns by area.',
   },
   {
@@ -107,7 +107,7 @@ export const applications: Application[] = [
     name: 'Gestión Inteligente del Transporte de Residuos',
     fixedCost: 20000,
     variableCost: 100,
-    category: 'GESTIÓN RESIDUOS',
+    category: 'GESTIÓN_RESIDUOS',
     help: 'Monitoring of vehicle routes and positions. Performance metrics analysis. Monitoring of driver behavior. CO₂ emissions tracking. Optimization of collection routes. Immediate response to reinforcement needs. Information exchange between vehicles and sensors.',
   },
   {
@@ -115,7 +115,7 @@ export const applications: Application[] = [
     name: 'Plataforma de Tratamiento de Residuos',
     fixedCost: 20000,
     variableCost: 100,
-    category: 'GESTIÓN RESIDUOS',
+    category: 'GESTIÓN_RESIDUOS',
     help: 'Analysis of waste composition. CO₂ emissions monitoring from disposal or reuse processes. Classification/segmentation of waste. Development of efficiency models for CO₂ emissions by process type.',
   },
   // URBANISMO

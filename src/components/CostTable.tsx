@@ -16,6 +16,7 @@ interface CostsTableProps {
     [key: string]: boolean; // Controla qué secciones están expandidas
   };
   toggleSection: (section: string) => void; // Función para expandir/contraer secciones
+  areas: { [key: string]: number }; // Selected areas
 }
 
 // Definición del componente funcional CostsTable
@@ -25,6 +26,7 @@ const CostsTable: React.FC<CostsTableProps> = ({
   applications = [],
   expandedSections,
   toggleSection,
+  areas,
 }) => {
   // Si no hay costos disponibles, muestra un mensaje informativo
   if (!costs || costs.length === 0) {
@@ -113,7 +115,7 @@ const CostsTable: React.FC<CostsTableProps> = ({
               {expandedSections.capaDinamica &&
                 selectedDynamicLayers.map((app) => (
                   <tr key={app.id} className="border-b border-gray-800 bg-gray-800 hover:bg-gray-700">
-                    <td className="px-4 py-2 text-sm pl-10 text-gray-300">{app.name}</td>
+                    <td className="px-4 py-2 text-sm pl-10 text-gray-300">{app.name} <span className='text-gray-500 text-xs'>({areas[app.id] ? areas[app.id] : '100'} km²)</span></td>
                     <td className="px-4 py-2 text-sm text-right text-gray-300">
                       <CurrencyFormatter value={costs[0].otherAppsCosts?.[app.id] || 0} />
                     </td>

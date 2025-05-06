@@ -110,6 +110,7 @@ const CostTablePage: React.FC = () => {
                             applications={applications}
                             expandedSections={expandedSections}
                             toggleSection={toggleSection}
+                            areas={areas}
                         />
                     )}
                 </div>

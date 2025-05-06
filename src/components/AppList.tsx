@@ -32,11 +32,12 @@ export const AppList: React.FC<AppListProps> = ({
     };
     return placeholders[app.id] || './images/trafico.jpg';
   };
-
+  console.log(applications);
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
       {applications.map((app) => {
         const isSelected = selectedApps.includes(app.id);
+        
         return (
           <div
             key={app.id}
