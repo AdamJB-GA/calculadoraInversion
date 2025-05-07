@@ -404,6 +404,15 @@
             "variableCost": 0,
             "help": "Real-Time Sensor/IoT Data (Dynamic Layer): Traffic Sensors (vehicle counting, congestion patterns), Environmental Sensors (air quality, rainfall, temperature), Infrastructure Monitoring (smart meters for energy consumption, water flow sensors), Social Media or Crowdsourced Data (optional for event detection or citizen perception analysis)."
           }
+        },
+        {
+          "id": "proteccion_recuperacion",
+          "name": "Recuperación y Evaluación Post-Desastres",
+          "cost": {
+            "fixedCost": 10000,
+            "variableCost": 90,
+            "help": "Rehabilitation of damaged critical infrastructure. Post-event evaluation to identify improvement areas. Update of risk maps with event-derived data."
+          }
         }
       ]
     },

@@ -27,23 +27,23 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
   applications,
 }) => {
   console.log(applications)
+  console.log(categories)
   return (
     <div className="bg-gray-900 p-6 rounded-lg">
       {/* Header horizontal de categorías */}
       <div className="flex gap-2 flex-wrap mb-3 border-b border-gray-700 pb-1">
-        {Object.entries(categories).map(([category, label]) => (
+        {categories.map((category) => (
           <button
             key={category}
             onClick={() =>
               setOpenCategory(openCategory === category ? null : category)
             }
-            className={`px-4 py-2 rounded-md transition-colors ${
-              openCategory === category 
-                ? 'bg-gray-700 text-gray-100' 
+            className={`px-4 py-2 rounded-md transition-colors ${openCategory === category
+                ? 'bg-gray-700 text-gray-100'
                 : 'bg-gray-800 text-gray-400 border border-gray-700 hover:bg-gray-700'
-            }`}
+              }`}
           >
-            {label}
+            {category}
           </button>
         ))}
       </div>
@@ -51,7 +51,7 @@ export const CategorySelector: React.FC<CategorySelectorProps> = ({
       {/* Contenido dinámico según la categoría seleccionada */}
       {openCategory && (
         <div>
-          {openCategory === 'CAPA_DINAMICA' ? (
+          {openCategory === 'Capa Dinamica' ? (
             <CapaDinamicaItem
               selectedApps={selectedApps}
               handleAppToggle={handleAppToggle}
