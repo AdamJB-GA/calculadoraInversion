@@ -8,6 +8,7 @@ import { Application } from '../types/calculator.types';
 import { HelpModal } from '../components/ui/modals/HelpModal';
 import { CategorySelector } from '../components/CategorySelector';
 import { useAppStore } from '../stores/UseAppStore';
+import servicesJson from '../assets/services.json';
 
 const KPISelectorPage: React.FC = () => {
   const navigate = useNavigate();
@@ -23,13 +24,22 @@ const KPISelectorPage: React.FC = () => {
   const [openHelp, setOpenHelp] = useState(false);
   const [selectedHelpApp, setSelectedHelpApp] = useState<Application | null>(null);
 
-  const categories: { [key: string]: string } = {
-    GEMELO_DIGITAL: 'Gemelo Digital',
-    EMERGENCIAS: 'Emergencias',
-    CARRETERAS: 'Carreteras',
-    GESTIÓN_RESIDUOS: 'Gestión de Residuos',
-    URBANISMO: 'Urbanismo',
-  };
+  const categories = servicesJson.supportServices.map((service) => service.name);
+
+  const applications: Application[] = servicesJson.supportServices.flatMap((service) =>
+    (service.use_case || []).map((useCase): Application => ({
+      id: useCase.id,
+      name: useCase.name,
+      fixedCost: useCase.cost.fixedCost || 0,
+      variableCost: useCase.cost.variableCost || 0,
+      category: service.name,
+      description: service.description || undefined,
+      help: useCase.cost?.help || undefined,
+    }))
+  );
+
+  console.log("USECASEPARENT_______________")
+  console.log(applications)
 
   const handleAppToggle = (appId: string): void => {
     setLocalSelectedApps((prev) => {

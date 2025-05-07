@@ -4,6 +4,8 @@ import CostsTable from '../components/CostTable';
 import { useAppStore } from '../stores/UseAppStore';
 import { calculateCost, applications } from '../utils/costUtility';
 import { YearlyCosts } from '../types/calculator.types';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import PdfCostTable from '../components/PdfCostTable';
 
 const CostTablePage: React.FC = () => {
     const navigate = useNavigate();
@@ -113,6 +115,22 @@ const CostTablePage: React.FC = () => {
                             areas={areas}
                         />
                     )}
+
+                    <PDFDownloadLink
+                        document={
+                            <PdfCostTable
+                                costs={costs}
+                                selectedApps={selectedApps}
+                                applications={applications}
+                                areas={areas}
+                            />
+                        }
+                        fileName="costos_inversion.pdf"
+                    >
+                        {({ loading }) =>
+                            loading ? 'Generando PDF...' : 'Descargar PDF Formal'
+                        }
+                    </PDFDownloadLink>
                 </div>
             </div>
         </div>

@@ -1,5 +1,7 @@
 import { Application, YearlyCosts } from '../types/calculator.types';
 
+import servicesJson from '../assets/services.json'
+
 export const applications: Application[] = [
   {
     id: 'gemelo_digital',
@@ -146,18 +148,33 @@ export const applications: Application[] = [
 ];
 
 export const calculateCost = (
-  selectedApps: string[],
-  areas: { [key: string]: number },
+  selectedApps: string[], //Servicios seleccionados
+  areas: { [key: string]: number }, //Areas seleccionadas de cada servicio
+
+  //Devuelve un array de objetos tipo YearlyCosts
 ): YearlyCosts[] => {
+
+  //Variable en la que se van a guardar todos los costos
   const yearlyCosts: YearlyCosts[] = [];
-  const km2 = Math.max(areas['gemelo_digital'] || 0, 100);
+  const areaGemeloDigital = Math.max(areas['gemelo_digital'] || 0, 100);
 
   // Onboarding Calculation
-  const onboardingGemelo = selectedApps.includes('gemelo_digital')
-    ? 170 * km2
-    : 0;
-  const onboardingAdaptacion = (onboardingGemelo * 40) / 52;
-  const onboardingDesarrollo = (onboardingAdaptacion * 8) / 40;
+
+  
+
+  //Recogo y almaceno el objeto de capaDinamica
+  const capaDinamica = servicesJson.supportServices.find(
+    (service) => service.id === 'capa_dinamica'
+  );
+
+  //Recogo y almaceno el objeto de gemeloDigital
+  const gemeloDigital = servicesJson.supportServices.find(
+    (service) => service.id === "gemelo_digital"
+  );
+
+  const onboardingGemelo = selectedApps.includes('gemelo_digital') ? gemeloDigital.use_case[0].cost.variableCost * areaGemeloDigital : 0;
+  const onboardingAdaptacion = (onboardingGemelo * 40) / 52; // 40% del total
+  const onboardingDesarrollo = (onboardingAdaptacion * 8) / 40; // 8% del total
 
   const onboardingCost: YearlyCosts = {
     gemeloCost: onboardingGemelo,
@@ -180,7 +197,7 @@ export const calculateCost = (
     }
 
     // Gemelo Digital Cost
-    const gemeloCost = selectedApps.includes('gemelo_digital') ? km2 * rate : 0;
+    const gemeloCost = selectedApps.includes('gemelo_digital') ? areaGemeloDigital * rate : 0;
     const adaptacionCost = (gemeloCost * 40) / 52;
     const desarrolloCost = (adaptacionCost * 8) / 40;
     const mantenimientoBasicoCost = gemeloCost * 0.1;

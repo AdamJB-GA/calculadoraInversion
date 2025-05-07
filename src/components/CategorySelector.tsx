@@ -4,7 +4,7 @@ import { Application } from '../types/calculator.types';
 import { AppList } from './AppList';
 
 interface CategorySelectorProps {
-  categories: { [key: string]: string };
+  categories: string[];
   openCategory: string | null;
   setOpenCategory: (category: string | null) => void;
   selectedApps: string[];
