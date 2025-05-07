@@ -1,7 +1,7 @@
 'use client';
 
 import { useAppStore } from '../stores/UseAppStore'; // Zustand Store
-import { applications } from '../utils/costUtility';
+import applications from '../utils/applications';
 import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 const ResumenPage = () => {

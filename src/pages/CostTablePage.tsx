@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import CostsTable from '../components/CostTable';
 import { useAppStore } from '../stores/UseAppStore';
-import { calculateCost, applications } from '../utils/costUtility';
+import { calculateCost } from '../utils/costUtility';
 import { YearlyCosts } from '../types/calculator.types';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import PdfCostTable from '../components/PdfCostTable';
+import applications from '../utils/applications';
 
 const CostTablePage: React.FC = () => {
     const navigate = useNavigate();
@@ -42,7 +43,7 @@ const CostTablePage: React.FC = () => {
                         }
                     });
 
-                    const calculatedCosts = calculateCost(selectedApps, validAreas);
+                    const calculatedCosts = calculateCost(applications ,selectedApps, validAreas);
                     console.log("Costos calculados:", calculatedCosts);
 
                     if (calculatedCosts && calculatedCosts.length > 0) {

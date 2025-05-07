@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { AppState } from '../types/calculator.types';
-import { applications } from '../utils/costUtility';
+import applications from '../utils/applications';
 
 // Create a store with Zustand
 export const useAppStore = create<AppState>((set) => ({

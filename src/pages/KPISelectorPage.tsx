@@ -3,12 +3,13 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { applications, calculateCost } from '../utils/costUtility';
+import { calculateCost } from '../utils/costUtility';
 import { Application } from '../types/calculator.types';
 import { HelpModal } from '../components/ui/modals/HelpModal';
 import { CategorySelector } from '../components/CategorySelector';
 import { useAppStore } from '../stores/UseAppStore';
 import servicesJson from '../assets/services.json';
+import applications from '../utils/applications';
 
 const KPISelectorPage: React.FC = () => {
   const navigate = useNavigate();
@@ -25,18 +26,6 @@ const KPISelectorPage: React.FC = () => {
   const [selectedHelpApp, setSelectedHelpApp] = useState<Application | null>(null);
 
   const categories = servicesJson.supportServices.map((service) => service.name);
-
-  const applications: Application[] = servicesJson.supportServices.flatMap((service) =>
-    (service.use_case || []).map((useCase): Application => ({
-      id: useCase.id,
-      name: useCase.name,
-      fixedCost: useCase.cost.fixedCost || 0,
-      variableCost: useCase.cost.variableCost || 0,
-      category: service.name,
-      description: service.description || undefined,
-      help: useCase.cost?.help || undefined,
-    }))
-  );
 
   console.log("USECASEPARENT_______________")
   console.log(applications)
@@ -74,7 +63,7 @@ const KPISelectorPage: React.FC = () => {
   };
 
   const handleCalculate = (): void => {
-    const calculatedCosts = calculateCost(selectedApps, areas);
+    const calculatedCosts = calculateCost(applications,selectedApps, areas);
     setSelectedApps(selectedApps);
     setAreas(areas);
     setCosts(calculatedCosts);
