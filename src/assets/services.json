@@ -1,0 +1,1174 @@
+{
+  "supportServices": [
+    {
+      "id": "gemelo_digital",
+      "name": "Gemelo Digital",
+      "use_case": [
+        {
+          "id": "gemelo_digital",
+          "name": "Gemelo Digital",
+          "cost": {
+            "fixedCost": 0,
+            "variableCost": 170,
+            "help": "The Digital Twin provides a detailed geospatial representation integrating multiple data layers for advanced analysis and simulations. **Base Maps & Terrain Models**: High-resolution satellite/aerial imagery providing visual and geospatial context; Topographic data including contour lines, DEM/DTM models, and slope information. **Administrative Boundaries**: Municipal, provincial, and regional jurisdictional limits; Parcel and property data essential for land management, urban planning, and cadastral applications. **Infrastructure & Communication Networks**: Roadways with attributes (speed limits, lanes); Public transport routes including railways, stations, and stops; Pedestrian paths, bike lanes, and sidewalks; Key mobility infrastructures such as highways, rail networks, airports, and ports. **Buildings & Structures**: 2D building footprints, 3D models, or BIM data when available; Height and facade data for urban density analysis, shadow impact studies, and visibility assessments. **Land Use & Land Cover (LULC)**: Classification of urban, agricultural, forestry, water bodies, and wetlands; Zoning and planning layers for residential, commercial, industrial, and mixed-use areas. **Environmental & Climate Data**: Green spaces, forests, and agricultural fields; Hydrography layers with rivers, lakes, drainage basins, and flood zones; Air quality and meteorological data from integrated stations or historical records; Geological and soil data for risk assessments and construction planning. **Points of Interest (POIs) & Socioeconomic Data**: Key facilities including hospitals, schools, emergency services, government buildings, and cultural sites; Population distribution, density, and economic indicators; Business and commercial zones such as retail hubs, industrial parks, and service points. This comprehensive Digital Twin allows for real-time monitoring, predictive analytics, and advanced simulations to support urban planning, infrastructure development, environmental management, and emergency response."
+          }
+        }
+      ]
+    },
+    {
+      "id": "capa_dinamica",
+      "name": "Capa Dinamica",
+      "use_case": [
+        {
+          "id": "capa_dinamica",
+          "name": "Capa Dinámica",
+          "cost": {
+            "fixedCost": 35000,
+            "variableCost": 0,
+            "help": "Real-Time Sensor/IoT Data (Dynamic Layer): Traffic Sensors (vehicle counting, congestion patterns), Environmental Sensors (air quality, rainfall, temperature), Infrastructure Monitoring (smart meters for energy consumption, water flow sensors), Social Media or Crowdsourced Data (optional for event detection or citizen perception analysis)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "29ad8fb8-7c53-4aac-b205-fcb0a8245996",
+      "name": "Emergencias",
+      "description": "Información en tiempo real sobre incidentes",
+      "use_case": [
+        {
+          "id": "1d7878b9-10ba-4b58-be4e-1e67b0f9e72f",
+          "geoai-id": "GEOAI-EMG-02",
+          "name": "Identificación de Áreas de Alto Riesgo de Incendio",
+          "summary": "Zonas con alto potencial de ignición y propagación de fuego",
+          "description": "Detección de áreas con condiciones críticas para la ignición y propagación de incendios forestales, mediante análisis geoespacial de vegetación, humedad del suelo, topografía y condiciones atmosféricas. El objetivo es anticipar zonas de alto riesgo y priorizar recursos preventivos.",
+          "management_phase": "Prevention",
+          "purpose": [
+            "Permitir una planificación estratégica de prevención y mitigación de incendios forestales, orientando los trabajos de cortafuegos, vigilancia, recursos de extinción y acciones educativas, reduciendo impactos ambientales, económicos y sociales."
+          ],
+          "benefits": [
+            "Identificación proactiva de zonas críticas",
+            "Optimización de recursos preventivos y operativos",
+            "Reducción del riesgo de incendios descontrolados",
+            "Mejora en la planificación de infraestructuras de contención",
+            "Protección del patrimonio natural y rural"
+          ],
+          "data_frequency_update": "Programada",
+          "proposed_update_process": "Automático",
+          "resolution": {
+            "min_resolution_m": 3,
+            "max_resolution_m": 0.5
+          },
+          "thematic_category": [
+            "Medio Ambiente",
+            "Información Geocientífica",
+            "Elevación",
+            "Planeamiento",
+            "Servicios",
+            "Redes de suministro"
+          ],
+          "inspire_themes": [
+            "III.3 Suelo",
+            "III.4 Uso del suelo",
+            "III.5 Salud y seguridad humanas",
+            "III.8 Instalaciones de producción e industriales",
+            "III.9 Instalaciones agrícolas y de acuicultura",
+            "III.12 Zonas de riesgos naturales",
+            "III.13 Condiciones atmosféricas",
+            "III.14 Aspectos geográficos de carácter meteorológico",
+            "III.17 Regiones biogeográficas",
+            "III.18 Hábitats y biotopos"
+          ],
+          "constellations_and_sensorics": [
+            "Óptica Multiespectral: Sentinel-2, Landsat para evaluar cobertura vegetal y estrés hídrico (NDVI, NBR).",
+            "Meteorología: Integración con datos de viento, temperatura y sequía (espacial + in situ).",
+            "Radar: Sentinel-1 para seguimiento en zonas de alta nubosidad."
+          ],
+          "ai_models": [
+            "1. Modelos de Segmentación Profunda: Extracción automática de características visuales relevantes en imágenes satelitales o aéreas para tareas de clasificación, detección de patrones o análisis estructural.",
+            "2. Modelos Híbridos y de Dominio Específico : Enfoques personalizados que integran modelos estadísticos, aprendizaje automático y conocimiento experto para problemas altamente contextualizados."
+          ],
+          "average_score": 87,
+          "analysis_category": [
+            {
+              "id": "7685fedb-9fe9-492b-907b-4c4ea72ceade",
+              "name": "Data Availability",
+              "description": "",
+              "average_score": 93,
+              "kpi": [
+                {
+                  "id": "1a39d249-541c-426b-ace0-353e0322c803",
+                  "name": "Data Completeness and Coverage (%)",
+                  "description": "Availability and coverage of required geodata.",
+                  "comments": "Todo el territorio vizcaíno",
+                  "weight": 0.5,
+                  "score": 100,
+                  "weighted_score": 50
+                },
+                {
+                  "id": "294745f2-fbba-4617-b462-28535c18b757",
+                  "name": "Data Freshness and Latency",
+                  "description": "Timeliness of data availability post-acquisition.",
+                  "comments": "TRIMESTRAL",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "f9a08d62-d5eb-464e-b349-eb5a2a30daab",
+                  "name": "Data Precision (Spatial Resolution)",
+                  "description": "Suitability of spatial resolution for application needs.",
+                  "comments": "Metrica y submetrica",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "49c20c60-9095-4628-9191-ff8ce7dc6e95",
+                  "name": "Data Quality and Reliability",
+                  "description": "Consistency and accuracy of the data.",
+                  "comments": "Cierto Pre - y post - procesamiento necesareo",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                },
+                {
+                  "id": "162c827f-3886-476b-b602-d9f7ac042404",
+                  "name": "Data Accessibility and Licensing",
+                  "description": "Ease of data access and legal permissions.",
+                  "comments": "Licencia submetrica de pago",
+                  "weight": 0.20000000298023224,
+                  "score": 80,
+                  "weighted_score": 16
+                }
+              ]
+            },
+            {
+              "id": "1ec628fb-c78d-4a98-9095-9a06f29023b7",
+              "name": "Impact",
+              "description": "",
+              "average_score": 78,
+              "kpi": [
+                {
+                  "id": "6cbe2adb-35b4-44bd-a601-9bb4d468c33a",
+                  "name": "Operational Efficiency Gains (%)",
+                  "description": "Improvement in department efficiency.",
+                  "comments": "Revisiones de muy alta calidad no invasiva",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "058ea49a-d8d2-4d44-96bf-66993160dec2",
+                  "name": "Decision-Making Enhancement Score",
+                  "description": "Impact on the quality of strategic decisions.",
+                  "comments": "Reducción de tiempo de decisión ",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "ef0e0198-5b0e-4e9a-9d7f-f4af5eea56d6",
+                  "name": "Compliance and Risk Reduction (%)",
+                  "description": "Reduction in compliance issues and risks.",
+                  "comments": "Reducción de risesgos manuales o de delays en la actualización del dato",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "1a134b42-daed-4164-9213-9ea15d5f8168",
+                  "name": "User Productivity Improvement (%)",
+                  "description": "Increase in productivity for application users.",
+                  "comments": "Acceso a amplias zonas de forma rápida y regular",
+                  "weight": 0.4000000059604645,
+                  "score": 70,
+                  "weighted_score": 28
+                },
+                {
+                  "id": "f310f3d0-73ef-48b2-9550-0d47f48352b4",
+                  "name": "User Satisfaction Score",
+                  "description": "Level of user satisfaction with the application.",
+                  "comments": "Modelos visualmente intuítivos y colaborativos de UX atractivo",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "2dd5fef5-fc35-4e42-a4e3-e42e86a5e750",
+                  "name": "Collaboration Enhancement Score",
+                  "description": "Improvement in collaboration among users.",
+                  "comments": "Capacidad de simulación y colaboración",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "f479ca03-4625-4141-9b9a-b2fe2440b3f2",
+                  "name": "Public Service Quality Improvement (%)",
+                  "description": "Enhancement in the quality of services delivered to the public.",
+                  "comments": "Servicio final sólo valorado en monentos de crisis",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "a8c5a384-3cfc-40d3-90bb-992d37d3766a",
+                  "name": "Citizen Satisfaction Score",
+                  "description": "Public perception and satisfaction with services.",
+                  "comments": "Acceso a modelo de colaboración ciudadana",
+                  "weight": 0.30000001192092896,
+                  "score": 70,
+                  "weighted_score": 21
+                },
+                {
+                  "id": "74d513d2-6b06-4041-aaa7-b3b92b0191f4",
+                  "name": "Social Impact Score",
+                  "description": "Broader societal benefits, such as safety and well-being.",
+                  "comments": "Acceso a modelo de colaboración ciudadana",
+                  "weight": 0.30000001192092896,
+                  "score": 90,
+                  "weighted_score": 27
+                }
+              ]
+            },
+            {
+              "id": "434ca254-11d3-4a62-883d-c108bd1d1a42",
+              "name": "Difficulty",
+              "description": "",
+              "average_score": 80,
+              "kpi": [
+                {
+                  "id": "5b595972-88c4-47e3-892e-d8ed8d0b3a94",
+                  "name": "Integration Compatibility (%)",
+                  "description": "Compatibility with existing IT systems.",
+                  "comments": "Estructura docker",
+                  "weight": 0.5,
+                  "score": 80,
+                  "weighted_score": 40
+                },
+                {
+                  "id": "a44594c6-3097-4a00-a57f-ee4d6c5db6ec",
+                  "name": "Technical Complexity Score (Low complexity - high score)",
+                  "description": "Complexity in processing and analyzing data.",
+                  "comments": "Estructura docker - servicio estandarizado",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "59012a52-c8f3-4cff-aee9-e3c1595a573d",
+                  "name": "Resource Requirements (High resource requirement low score)",
+                  "description": "Need for specialized hardware/software and skilled personnel.",
+                  "comments": "Cierta especialización de recursos en modelos de emergencia ambiental",
+                  "weight": 0.30000001192092896,
+                  "score": 90,
+                  "weighted_score": 27
+                },
+                {
+                  "id": "49b2d224-748b-41c5-bfaa-7d07f5600f1a",
+                  "name": "Development Time (Months) (> 3 months low score)",
+                  "description": "Time required for development and deployment.",
+                  "comments": "entre 2 - 4 meses",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                },
+                {
+                  "id": "331ff09a-4e62-4ff3-b8ad-79bb07b301a1",
+                  "name": "Change Management Effort (%) (Change management effort low score)",
+                  "description": "Effort needed for workforce adaptation.",
+                  "comments": "Cierto cambio en el uso de sistemas y prácticas",
+                  "weight": 0.10000000149011612,
+                  "score": 80,
+                  "weighted_score": 8
+                }
+              ]
+            },
+            {
+              "id": "ab35b7be-c0b1-45d8-acec-239f4f8c1be6",
+              "name": "Cost of Implementation",
+              "description": "",
+              "average_score": 82,
+              "kpi": [
+                {
+                  "id": "83512394-3d62-4d13-afc3-dd4e818f3953",
+                  "name": "Development Cost ($) (high cost; low score)",
+                  "description": "Estimated cost for developing the application.",
+                  "comments": "Modelo de integración en base a docker faciliat el modelo de desarrollo e integración",
+                  "weight": 0.699999988079071,
+                  "score": 80,
+                  "weighted_score": 55
+                },
+                {
+                  "id": "59173ca7-9d3d-4c77-91de-b515161a2f0a",
+                  "name": "Maintenance Cost ($/Year) (high cost; low score)",
+                  "description": "Ongoing costs for maintaining the application annually.",
+                  "comments": "Coste de mantenimiento anual optimizado en base a un AOI amplia",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "be50b59a-7179-4a97-ae6c-293a976f002c",
+                  "name": "Cost per Public Service Delivered ($) (high cost; low score)",
+                  "description": "Cost-effectiveness of the application in delivering services.",
+                  "comments": "Bajo coste de entrega a través de las plataformas existentes",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "4b3e28e6-c98a-45d2-b6a7-7539346e1b4d",
+                  "name": "Infrastructure Investment (%) (high cost; low score)",
+                  "description": "Percentage of total budget required for infrastructure upgrades.",
+                  "comments": "Inversión en estructura de High availability",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                }
+              ]
+            },
+            {
+              "id": "e5d0534c-760c-409a-af78-7dcc4890ed55",
+              "name": "AI, LLM and ML Dependencies",
+              "description": "",
+              "average_score": 90,
+              "kpi": [
+                {
+                  "id": "9368bdbf-2399-4b5f-964f-3999da670f21",
+                  "name": "AI/ML Integration Level",
+                  "description": "Extent of reliance on AI, LLM, and ML technologies.",
+                  "comments": "GeoAI ha desarrollado modelos de AI/ML ya integrados para ofrecer el servicio,. Modelos de aprendizaje predefinidos.",
+                  "weight": 0.4000000059604645,
+                  "score": 90,
+                  "weighted_score": 36
+                },
+                {
+                  "id": "0c5c4dd8-430b-49b3-bb05-4ccbccda2def",
+                  "name": "Algorithm Complexity",
+                  "description": "Complexity of AI/ML algorithms used.",
+                  "comments": "GeoAI ha desarrollado modelos algoritmicos",
+                  "weight": 0.20000000298023224,
+                  "score": 88,
+                  "weighted_score": 17
+                },
+                {
+                  "id": "e97596f7-e62a-42d0-b858-348a42782e7d",
+                  "name": "Data Requirements for AI/ML (high requirements/low score)",
+                  "description": "Volume and quality of data needed for AI/ML models.",
+                  "comments": "Requerimientos de volumen de datos elevados y entrenamiento de datos debe estat adaptado al territorio",
+                  "weight": 0.20000000298023224,
+                  "score": 94,
+                  "weighted_score": 18
+                },
+                {
+                  "id": "46dd6c32-2105-40a6-af81-9167019968cf",
+                  "name": "Availability of Expertise",
+                  "description": "Access to skilled personnel for AI/ML development.",
+                  "comments": "Requerimientos de volumen de datos elevados",
+                  "weight": 0.20000000298023224,
+                  "score": 88,
+                  "weighted_score": 17
+                }
+              ]
+            },
+            {
+              "id": "f02a9819-9cdf-4d83-a408-5d0890625f41",
+              "name": "Ethics and Data Privacy",
+              "description": "",
+              "average_score": 100,
+              "kpi": [
+                {
+                  "id": "5a6154db-6d69-4c29-ac77-c4a5ef05c066",
+                  "name": "Compliance with Data Privacy Laws",
+                  "description": "Adherence to data protection regulations.",
+                  "comments": "Datos anonimizados",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "adcd083e-e2fc-4ff4-89ae-8b4dbb916a77",
+                  "name": "Ethical Use of Data and AI",
+                  "description": "Assessment of ethical considerations in data and AI usage.",
+                  "comments": "No sean identificado situaciones éticas complejas",
+                  "weight": 0.20000000298023224,
+                  "score": 100,
+                  "weighted_score": 20
+                }
+              ]
+            }
+          ],
+          "cost": {
+            "fixedCost": 35000,
+            "variableCost": 0,
+            "help": "Real-Time Sensor/IoT Data (Dynamic Layer): Traffic Sensors (vehicle counting, congestion patterns), Environmental Sensors (air quality, rainfall, temperature), Infrastructure Monitoring (smart meters for energy consumption, water flow sensors), Social Media or Crowdsourced Data (optional for event detection or citizen perception analysis)."
+          }
+        },
+        {
+          "id": "proteccion_recuperacion",
+          "name": "Recuperación y Evaluación Post-Desastres",
+          "cost": {
+            "fixedCost": 10000,
+            "variableCost": 90,
+            "help": "Rehabilitation of damaged critical infrastructure. Post-event evaluation to identify improvement areas. Update of risk maps with event-derived data."
+          }
+        }
+      ]
+    },
+    {
+      "id": "29ad8fb8-7c53-4aac-b205-fcb0a8245996",
+      "name": "Pruebas",
+      "description": "Información en tiempo real sobre incidentes",
+      "use_case": [
+        {
+          "id": "1d7878b9-10ba-4b58-be4e-1e67b0f9e72f",
+          "geoai-id": "GEOAI-EMG-02",
+          "name": "Identificación de Áreas de Alto Riesgo de Incendio",
+          "summary": "Zonas con alto potencial de ignición y propagación de fuego",
+          "description": "Detección de áreas con condiciones críticas para la ignición y propagación de incendios forestales, mediante análisis geoespacial de vegetación, humedad del suelo, topografía y condiciones atmosféricas. El objetivo es anticipar zonas de alto riesgo y priorizar recursos preventivos.",
+          "management_phase": "Prevention",
+          "purpose": [
+            "Permitir una planificación estratégica de prevención y mitigación de incendios forestales, orientando los trabajos de cortafuegos, vigilancia, recursos de extinción y acciones educativas, reduciendo impactos ambientales, económicos y sociales."
+          ],
+          "benefits": [
+            "Identificación proactiva de zonas críticas",
+            "Optimización de recursos preventivos y operativos",
+            "Reducción del riesgo de incendios descontrolados",
+            "Mejora en la planificación de infraestructuras de contención",
+            "Protección del patrimonio natural y rural"
+          ],
+          "data_frequency_update": "Programada",
+          "proposed_update_process": "Automático",
+          "resolution": {
+            "min_resolution_m": 3,
+            "max_resolution_m": 0.5
+          },
+          "thematic_category": [
+            "Medio Ambiente",
+            "Información Geocientífica",
+            "Elevación",
+            "Planeamiento",
+            "Servicios",
+            "Redes de suministro"
+          ],
+          "inspire_themes": [
+            "III.3 Suelo",
+            "III.4 Uso del suelo",
+            "III.5 Salud y seguridad humanas",
+            "III.8 Instalaciones de producción e industriales",
+            "III.9 Instalaciones agrícolas y de acuicultura",
+            "III.12 Zonas de riesgos naturales",
+            "III.13 Condiciones atmosféricas",
+            "III.14 Aspectos geográficos de carácter meteorológico",
+            "III.17 Regiones biogeográficas",
+            "III.18 Hábitats y biotopos"
+          ],
+          "constellations_and_sensorics": [
+            "Óptica Multiespectral: Sentinel-2, Landsat para evaluar cobertura vegetal y estrés hídrico (NDVI, NBR).",
+            "Meteorología: Integración con datos de viento, temperatura y sequía (espacial + in situ).",
+            "Radar: Sentinel-1 para seguimiento en zonas de alta nubosidad."
+          ],
+          "ai_models": [
+            "1. Modelos de Segmentación Profunda: Extracción automática de características visuales relevantes en imágenes satelitales o aéreas para tareas de clasificación, detección de patrones o análisis estructural.",
+            "2. Modelos Híbridos y de Dominio Específico : Enfoques personalizados que integran modelos estadísticos, aprendizaje automático y conocimiento experto para problemas altamente contextualizados."
+          ],
+          "average_score": 87,
+          "analysis_category": [
+            {
+              "id": "7685fedb-9fe9-492b-907b-4c4ea72ceade",
+              "name": "Data Availability",
+              "description": "",
+              "average_score": 93,
+              "kpi": [
+                {
+                  "id": "1a39d249-541c-426b-ace0-353e0322c803",
+                  "name": "Data Completeness and Coverage (%)",
+                  "description": "Availability and coverage of required geodata.",
+                  "comments": "Todo el territorio vizcaíno",
+                  "weight": 0.5,
+                  "score": 100,
+                  "weighted_score": 50
+                },
+                {
+                  "id": "294745f2-fbba-4617-b462-28535c18b757",
+                  "name": "Data Freshness and Latency",
+                  "description": "Timeliness of data availability post-acquisition.",
+                  "comments": "TRIMESTRAL",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "f9a08d62-d5eb-464e-b349-eb5a2a30daab",
+                  "name": "Data Precision (Spatial Resolution)",
+                  "description": "Suitability of spatial resolution for application needs.",
+                  "comments": "Metrica y submetrica",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "49c20c60-9095-4628-9191-ff8ce7dc6e95",
+                  "name": "Data Quality and Reliability",
+                  "description": "Consistency and accuracy of the data.",
+                  "comments": "Cierto Pre - y post - procesamiento necesareo",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                },
+                {
+                  "id": "162c827f-3886-476b-b602-d9f7ac042404",
+                  "name": "Data Accessibility and Licensing",
+                  "description": "Ease of data access and legal permissions.",
+                  "comments": "Licencia submetrica de pago",
+                  "weight": 0.20000000298023224,
+                  "score": 80,
+                  "weighted_score": 16
+                }
+              ]
+            },
+            {
+              "id": "1ec628fb-c78d-4a98-9095-9a06f29023b7",
+              "name": "Impact",
+              "description": "",
+              "average_score": 78,
+              "kpi": [
+                {
+                  "id": "6cbe2adb-35b4-44bd-a601-9bb4d468c33a",
+                  "name": "Operational Efficiency Gains (%)",
+                  "description": "Improvement in department efficiency.",
+                  "comments": "Revisiones de muy alta calidad no invasiva",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "058ea49a-d8d2-4d44-96bf-66993160dec2",
+                  "name": "Decision-Making Enhancement Score",
+                  "description": "Impact on the quality of strategic decisions.",
+                  "comments": "Reducción de tiempo de decisión ",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "ef0e0198-5b0e-4e9a-9d7f-f4af5eea56d6",
+                  "name": "Compliance and Risk Reduction (%)",
+                  "description": "Reduction in compliance issues and risks.",
+                  "comments": "Reducción de risesgos manuales o de delays en la actualización del dato",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "1a134b42-daed-4164-9213-9ea15d5f8168",
+                  "name": "User Productivity Improvement (%)",
+                  "description": "Increase in productivity for application users.",
+                  "comments": "Acceso a amplias zonas de forma rápida y regular",
+                  "weight": 0.4000000059604645,
+                  "score": 70,
+                  "weighted_score": 28
+                },
+                {
+                  "id": "f310f3d0-73ef-48b2-9550-0d47f48352b4",
+                  "name": "User Satisfaction Score",
+                  "description": "Level of user satisfaction with the application.",
+                  "comments": "Modelos visualmente intuítivos y colaborativos de UX atractivo",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "2dd5fef5-fc35-4e42-a4e3-e42e86a5e750",
+                  "name": "Collaboration Enhancement Score",
+                  "description": "Improvement in collaboration among users.",
+                  "comments": "Capacidad de simulación y colaboración",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "f479ca03-4625-4141-9b9a-b2fe2440b3f2",
+                  "name": "Public Service Quality Improvement (%)",
+                  "description": "Enhancement in the quality of services delivered to the public.",
+                  "comments": "Servicio final sólo valorado en monentos de crisis",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "a8c5a384-3cfc-40d3-90bb-992d37d3766a",
+                  "name": "Citizen Satisfaction Score",
+                  "description": "Public perception and satisfaction with services.",
+                  "comments": "Acceso a modelo de colaboración ciudadana",
+                  "weight": 0.30000001192092896,
+                  "score": 70,
+                  "weighted_score": 21
+                },
+                {
+                  "id": "74d513d2-6b06-4041-aaa7-b3b92b0191f4",
+                  "name": "Social Impact Score",
+                  "description": "Broader societal benefits, such as safety and well-being.",
+                  "comments": "Acceso a modelo de colaboración ciudadana",
+                  "weight": 0.30000001192092896,
+                  "score": 90,
+                  "weighted_score": 27
+                }
+              ]
+            },
+            {
+              "id": "434ca254-11d3-4a62-883d-c108bd1d1a42",
+              "name": "Difficulty",
+              "description": "",
+              "average_score": 80,
+              "kpi": [
+                {
+                  "id": "5b595972-88c4-47e3-892e-d8ed8d0b3a94",
+                  "name": "Integration Compatibility (%)",
+                  "description": "Compatibility with existing IT systems.",
+                  "comments": "Estructura docker",
+                  "weight": 0.5,
+                  "score": 80,
+                  "weighted_score": 40
+                },
+                {
+                  "id": "a44594c6-3097-4a00-a57f-ee4d6c5db6ec",
+                  "name": "Technical Complexity Score (Low complexity - high score)",
+                  "description": "Complexity in processing and analyzing data.",
+                  "comments": "Estructura docker - servicio estandarizado",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "59012a52-c8f3-4cff-aee9-e3c1595a573d",
+                  "name": "Resource Requirements (High resource requirement low score)",
+                  "description": "Need for specialized hardware/software and skilled personnel.",
+                  "comments": "Cierta especialización de recursos en modelos de emergencia ambiental",
+                  "weight": 0.30000001192092896,
+                  "score": 90,
+                  "weighted_score": 27
+                },
+                {
+                  "id": "49b2d224-748b-41c5-bfaa-7d07f5600f1a",
+                  "name": "Development Time (Months) (> 3 months low score)",
+                  "description": "Time required for development and deployment.",
+                  "comments": "entre 2 - 4 meses",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                },
+                {
+                  "id": "331ff09a-4e62-4ff3-b8ad-79bb07b301a1",
+                  "name": "Change Management Effort (%) (Change management effort low score)",
+                  "description": "Effort needed for workforce adaptation.",
+                  "comments": "Cierto cambio en el uso de sistemas y prácticas",
+                  "weight": 0.10000000149011612,
+                  "score": 80,
+                  "weighted_score": 8
+                }
+              ]
+            },
+            {
+              "id": "ab35b7be-c0b1-45d8-acec-239f4f8c1be6",
+              "name": "Cost of Implementation",
+              "description": "",
+              "average_score": 82,
+              "kpi": [
+                {
+                  "id": "83512394-3d62-4d13-afc3-dd4e818f3953",
+                  "name": "Development Cost ($) (high cost; low score)",
+                  "description": "Estimated cost for developing the application.",
+                  "comments": "Modelo de integración en base a docker faciliat el modelo de desarrollo e integración",
+                  "weight": 0.699999988079071,
+                  "score": 80,
+                  "weighted_score": 55
+                },
+                {
+                  "id": "59173ca7-9d3d-4c77-91de-b515161a2f0a",
+                  "name": "Maintenance Cost ($/Year) (high cost; low score)",
+                  "description": "Ongoing costs for maintaining the application annually.",
+                  "comments": "Coste de mantenimiento anual optimizado en base a un AOI amplia",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "be50b59a-7179-4a97-ae6c-293a976f002c",
+                  "name": "Cost per Public Service Delivered ($) (high cost; low score)",
+                  "description": "Cost-effectiveness of the application in delivering services.",
+                  "comments": "Bajo coste de entrega a través de las plataformas existentes",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "4b3e28e6-c98a-45d2-b6a7-7539346e1b4d",
+                  "name": "Infrastructure Investment (%) (high cost; low score)",
+                  "description": "Percentage of total budget required for infrastructure upgrades.",
+                  "comments": "Inversión en estructura de High availability",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                }
+              ]
+            },
+            {
+              "id": "e5d0534c-760c-409a-af78-7dcc4890ed55",
+              "name": "AI, LLM and ML Dependencies",
+              "description": "",
+              "average_score": 90,
+              "kpi": [
+                {
+                  "id": "9368bdbf-2399-4b5f-964f-3999da670f21",
+                  "name": "AI/ML Integration Level",
+                  "description": "Extent of reliance on AI, LLM, and ML technologies.",
+                  "comments": "GeoAI ha desarrollado modelos de AI/ML ya integrados para ofrecer el servicio,. Modelos de aprendizaje predefinidos.",
+                  "weight": 0.4000000059604645,
+                  "score": 90,
+                  "weighted_score": 36
+                },
+                {
+                  "id": "0c5c4dd8-430b-49b3-bb05-4ccbccda2def",
+                  "name": "Algorithm Complexity",
+                  "description": "Complexity of AI/ML algorithms used.",
+                  "comments": "GeoAI ha desarrollado modelos algoritmicos",
+                  "weight": 0.20000000298023224,
+                  "score": 88,
+                  "weighted_score": 17
+                },
+                {
+                  "id": "e97596f7-e62a-42d0-b858-348a42782e7d",
+                  "name": "Data Requirements for AI/ML (high requirements/low score)",
+                  "description": "Volume and quality of data needed for AI/ML models.",
+                  "comments": "Requerimientos de volumen de datos elevados y entrenamiento de datos debe estat adaptado al territorio",
+                  "weight": 0.20000000298023224,
+                  "score": 94,
+                  "weighted_score": 18
+                },
+                {
+                  "id": "46dd6c32-2105-40a6-af81-9167019968cf",
+                  "name": "Availability of Expertise",
+                  "description": "Access to skilled personnel for AI/ML development.",
+                  "comments": "Requerimientos de volumen de datos elevados",
+                  "weight": 0.20000000298023224,
+                  "score": 88,
+                  "weighted_score": 17
+                }
+              ]
+            },
+            {
+              "id": "f02a9819-9cdf-4d83-a408-5d0890625f41",
+              "name": "Ethics and Data Privacy",
+              "description": "",
+              "average_score": 100,
+              "kpi": [
+                {
+                  "id": "5a6154db-6d69-4c29-ac77-c4a5ef05c066",
+                  "name": "Compliance with Data Privacy Laws",
+                  "description": "Adherence to data protection regulations.",
+                  "comments": "Datos anonimizados",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "adcd083e-e2fc-4ff4-89ae-8b4dbb916a77",
+                  "name": "Ethical Use of Data and AI",
+                  "description": "Assessment of ethical considerations in data and AI usage.",
+                  "comments": "No sean identificado situaciones éticas complejas",
+                  "weight": 0.20000000298023224,
+                  "score": 100,
+                  "weighted_score": 20
+                }
+              ]
+            }
+          ],
+          "cost": {
+            "fixedCost": 35000,
+            "variableCost": 0,
+            "help": "Real-Time Sensor/IoT Data (Dynamic Layer): Traffic Sensors (vehicle counting, congestion patterns), Environmental Sensors (air quality, rainfall, temperature), Infrastructure Monitoring (smart meters for energy consumption, water flow sensors), Social Media or Crowdsourced Data (optional for event detection or citizen perception analysis)."
+          }
+        }
+      ]
+    },
+    {
+      "id": "29ad8fb8-7c53-4aac-b205-fcb0a8245996",
+      "name": "Pruebas2",
+      "description": "Información en tiempo real sobre incidentes",
+      "use_case": [
+        {
+          "id": "1d7878b9-10ba-4b58-be4e-1e67b0f9e72f",
+          "geoai-id": "GEOAI-EMG-02",
+          "name": "Identificación de Áreas de Alto Riesgo de Incendio",
+          "summary": "Zonas con alto potencial de ignición y propagación de fuego",
+          "description": "Detección de áreas con condiciones críticas para la ignición y propagación de incendios forestales, mediante análisis geoespacial de vegetación, humedad del suelo, topografía y condiciones atmosféricas. El objetivo es anticipar zonas de alto riesgo y priorizar recursos preventivos.",
+          "management_phase": "Prevention",
+          "purpose": [
+            "Permitir una planificación estratégica de prevención y mitigación de incendios forestales, orientando los trabajos de cortafuegos, vigilancia, recursos de extinción y acciones educativas, reduciendo impactos ambientales, económicos y sociales."
+          ],
+          "benefits": [
+            "Identificación proactiva de zonas críticas",
+            "Optimización de recursos preventivos y operativos",
+            "Reducción del riesgo de incendios descontrolados",
+            "Mejora en la planificación de infraestructuras de contención",
+            "Protección del patrimonio natural y rural"
+          ],
+          "data_frequency_update": "Programada",
+          "proposed_update_process": "Automático",
+          "resolution": {
+            "min_resolution_m": 3,
+            "max_resolution_m": 0.5
+          },
+          "thematic_category": [
+            "Medio Ambiente",
+            "Información Geocientífica",
+            "Elevación",
+            "Planeamiento",
+            "Servicios",
+            "Redes de suministro"
+          ],
+          "inspire_themes": [
+            "III.3 Suelo",
+            "III.4 Uso del suelo",
+            "III.5 Salud y seguridad humanas",
+            "III.8 Instalaciones de producción e industriales",
+            "III.9 Instalaciones agrícolas y de acuicultura",
+            "III.12 Zonas de riesgos naturales",
+            "III.13 Condiciones atmosféricas",
+            "III.14 Aspectos geográficos de carácter meteorológico",
+            "III.17 Regiones biogeográficas",
+            "III.18 Hábitats y biotopos"
+          ],
+          "constellations_and_sensorics": [
+            "Óptica Multiespectral: Sentinel-2, Landsat para evaluar cobertura vegetal y estrés hídrico (NDVI, NBR).",
+            "Meteorología: Integración con datos de viento, temperatura y sequía (espacial + in situ).",
+            "Radar: Sentinel-1 para seguimiento en zonas de alta nubosidad."
+          ],
+          "ai_models": [
+            "1. Modelos de Segmentación Profunda: Extracción automática de características visuales relevantes en imágenes satelitales o aéreas para tareas de clasificación, detección de patrones o análisis estructural.",
+            "2. Modelos Híbridos y de Dominio Específico : Enfoques personalizados que integran modelos estadísticos, aprendizaje automático y conocimiento experto para problemas altamente contextualizados."
+          ],
+          "average_score": 87,
+          "analysis_category": [
+            {
+              "id": "7685fedb-9fe9-492b-907b-4c4ea72ceade",
+              "name": "Data Availability",
+              "description": "",
+              "average_score": 93,
+              "kpi": [
+                {
+                  "id": "1a39d249-541c-426b-ace0-353e0322c803",
+                  "name": "Data Completeness and Coverage (%)",
+                  "description": "Availability and coverage of required geodata.",
+                  "comments": "Todo el territorio vizcaíno",
+                  "weight": 0.5,
+                  "score": 100,
+                  "weighted_score": 50
+                },
+                {
+                  "id": "294745f2-fbba-4617-b462-28535c18b757",
+                  "name": "Data Freshness and Latency",
+                  "description": "Timeliness of data availability post-acquisition.",
+                  "comments": "TRIMESTRAL",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "f9a08d62-d5eb-464e-b349-eb5a2a30daab",
+                  "name": "Data Precision (Spatial Resolution)",
+                  "description": "Suitability of spatial resolution for application needs.",
+                  "comments": "Metrica y submetrica",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "49c20c60-9095-4628-9191-ff8ce7dc6e95",
+                  "name": "Data Quality and Reliability",
+                  "description": "Consistency and accuracy of the data.",
+                  "comments": "Cierto Pre - y post - procesamiento necesareo",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                },
+                {
+                  "id": "162c827f-3886-476b-b602-d9f7ac042404",
+                  "name": "Data Accessibility and Licensing",
+                  "description": "Ease of data access and legal permissions.",
+                  "comments": "Licencia submetrica de pago",
+                  "weight": 0.20000000298023224,
+                  "score": 80,
+                  "weighted_score": 16
+                }
+              ]
+            },
+            {
+              "id": "1ec628fb-c78d-4a98-9095-9a06f29023b7",
+              "name": "Impact",
+              "description": "",
+              "average_score": 78,
+              "kpi": [
+                {
+                  "id": "6cbe2adb-35b4-44bd-a601-9bb4d468c33a",
+                  "name": "Operational Efficiency Gains (%)",
+                  "description": "Improvement in department efficiency.",
+                  "comments": "Revisiones de muy alta calidad no invasiva",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "058ea49a-d8d2-4d44-96bf-66993160dec2",
+                  "name": "Decision-Making Enhancement Score",
+                  "description": "Impact on the quality of strategic decisions.",
+                  "comments": "Reducción de tiempo de decisión ",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "ef0e0198-5b0e-4e9a-9d7f-f4af5eea56d6",
+                  "name": "Compliance and Risk Reduction (%)",
+                  "description": "Reduction in compliance issues and risks.",
+                  "comments": "Reducción de risesgos manuales o de delays en la actualización del dato",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "1a134b42-daed-4164-9213-9ea15d5f8168",
+                  "name": "User Productivity Improvement (%)",
+                  "description": "Increase in productivity for application users.",
+                  "comments": "Acceso a amplias zonas de forma rápida y regular",
+                  "weight": 0.4000000059604645,
+                  "score": 70,
+                  "weighted_score": 28
+                },
+                {
+                  "id": "f310f3d0-73ef-48b2-9550-0d47f48352b4",
+                  "name": "User Satisfaction Score",
+                  "description": "Level of user satisfaction with the application.",
+                  "comments": "Modelos visualmente intuítivos y colaborativos de UX atractivo",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "2dd5fef5-fc35-4e42-a4e3-e42e86a5e750",
+                  "name": "Collaboration Enhancement Score",
+                  "description": "Improvement in collaboration among users.",
+                  "comments": "Capacidad de simulación y colaboración",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "f479ca03-4625-4141-9b9a-b2fe2440b3f2",
+                  "name": "Public Service Quality Improvement (%)",
+                  "description": "Enhancement in the quality of services delivered to the public.",
+                  "comments": "Servicio final sólo valorado en monentos de crisis",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "a8c5a384-3cfc-40d3-90bb-992d37d3766a",
+                  "name": "Citizen Satisfaction Score",
+                  "description": "Public perception and satisfaction with services.",
+                  "comments": "Acceso a modelo de colaboración ciudadana",
+                  "weight": 0.30000001192092896,
+                  "score": 70,
+                  "weighted_score": 21
+                },
+                {
+                  "id": "74d513d2-6b06-4041-aaa7-b3b92b0191f4",
+                  "name": "Social Impact Score",
+                  "description": "Broader societal benefits, such as safety and well-being.",
+                  "comments": "Acceso a modelo de colaboración ciudadana",
+                  "weight": 0.30000001192092896,
+                  "score": 90,
+                  "weighted_score": 27
+                }
+              ]
+            },
+            {
+              "id": "434ca254-11d3-4a62-883d-c108bd1d1a42",
+              "name": "Difficulty",
+              "description": "",
+              "average_score": 80,
+              "kpi": [
+                {
+                  "id": "5b595972-88c4-47e3-892e-d8ed8d0b3a94",
+                  "name": "Integration Compatibility (%)",
+                  "description": "Compatibility with existing IT systems.",
+                  "comments": "Estructura docker",
+                  "weight": 0.5,
+                  "score": 80,
+                  "weighted_score": 40
+                },
+                {
+                  "id": "a44594c6-3097-4a00-a57f-ee4d6c5db6ec",
+                  "name": "Technical Complexity Score (Low complexity - high score)",
+                  "description": "Complexity in processing and analyzing data.",
+                  "comments": "Estructura docker - servicio estandarizado",
+                  "weight": 0.4000000059604645,
+                  "score": 80,
+                  "weighted_score": 32
+                },
+                {
+                  "id": "59012a52-c8f3-4cff-aee9-e3c1595a573d",
+                  "name": "Resource Requirements (High resource requirement low score)",
+                  "description": "Need for specialized hardware/software and skilled personnel.",
+                  "comments": "Cierta especialización de recursos en modelos de emergencia ambiental",
+                  "weight": 0.30000001192092896,
+                  "score": 90,
+                  "weighted_score": 27
+                },
+                {
+                  "id": "49b2d224-748b-41c5-bfaa-7d07f5600f1a",
+                  "name": "Development Time (Months) (> 3 months low score)",
+                  "description": "Time required for development and deployment.",
+                  "comments": "entre 2 - 4 meses",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                },
+                {
+                  "id": "331ff09a-4e62-4ff3-b8ad-79bb07b301a1",
+                  "name": "Change Management Effort (%) (Change management effort low score)",
+                  "description": "Effort needed for workforce adaptation.",
+                  "comments": "Cierto cambio en el uso de sistemas y prácticas",
+                  "weight": 0.10000000149011612,
+                  "score": 80,
+                  "weighted_score": 8
+                }
+              ]
+            },
+            {
+              "id": "ab35b7be-c0b1-45d8-acec-239f4f8c1be6",
+              "name": "Cost of Implementation",
+              "description": "",
+              "average_score": 82,
+              "kpi": [
+                {
+                  "id": "83512394-3d62-4d13-afc3-dd4e818f3953",
+                  "name": "Development Cost ($) (high cost; low score)",
+                  "description": "Estimated cost for developing the application.",
+                  "comments": "Modelo de integración en base a docker faciliat el modelo de desarrollo e integración",
+                  "weight": 0.699999988079071,
+                  "score": 80,
+                  "weighted_score": 55
+                },
+                {
+                  "id": "59173ca7-9d3d-4c77-91de-b515161a2f0a",
+                  "name": "Maintenance Cost ($/Year) (high cost; low score)",
+                  "description": "Ongoing costs for maintaining the application annually.",
+                  "comments": "Coste de mantenimiento anual optimizado en base a un AOI amplia",
+                  "weight": 0.30000001192092896,
+                  "score": 80,
+                  "weighted_score": 24
+                },
+                {
+                  "id": "be50b59a-7179-4a97-ae6c-293a976f002c",
+                  "name": "Cost per Public Service Delivered ($) (high cost; low score)",
+                  "description": "Cost-effectiveness of the application in delivering services.",
+                  "comments": "Bajo coste de entrega a través de las plataformas existentes",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "4b3e28e6-c98a-45d2-b6a7-7539346e1b4d",
+                  "name": "Infrastructure Investment (%) (high cost; low score)",
+                  "description": "Percentage of total budget required for infrastructure upgrades.",
+                  "comments": "Inversión en estructura de High availability",
+                  "weight": 0.20000000298023224,
+                  "score": 70,
+                  "weighted_score": 14
+                }
+              ]
+            },
+            {
+              "id": "e5d0534c-760c-409a-af78-7dcc4890ed55",
+              "name": "AI, LLM and ML Dependencies",
+              "description": "",
+              "average_score": 90,
+              "kpi": [
+                {
+                  "id": "9368bdbf-2399-4b5f-964f-3999da670f21",
+                  "name": "AI/ML Integration Level",
+                  "description": "Extent of reliance on AI, LLM, and ML technologies.",
+                  "comments": "GeoAI ha desarrollado modelos de AI/ML ya integrados para ofrecer el servicio,. Modelos de aprendizaje predefinidos.",
+                  "weight": 0.4000000059604645,
+                  "score": 90,
+                  "weighted_score": 36
+                },
+                {
+                  "id": "0c5c4dd8-430b-49b3-bb05-4ccbccda2def",
+                  "name": "Algorithm Complexity",
+                  "description": "Complexity of AI/ML algorithms used.",
+                  "comments": "GeoAI ha desarrollado modelos algoritmicos",
+                  "weight": 0.20000000298023224,
+                  "score": 88,
+                  "weighted_score": 17
+                },
+                {
+                  "id": "e97596f7-e62a-42d0-b858-348a42782e7d",
+                  "name": "Data Requirements for AI/ML (high requirements/low score)",
+                  "description": "Volume and quality of data needed for AI/ML models.",
+                  "comments": "Requerimientos de volumen de datos elevados y entrenamiento de datos debe estat adaptado al territorio",
+                  "weight": 0.20000000298023224,
+                  "score": 94,
+                  "weighted_score": 18
+                },
+                {
+                  "id": "46dd6c32-2105-40a6-af81-9167019968cf",
+                  "name": "Availability of Expertise",
+                  "description": "Access to skilled personnel for AI/ML development.",
+                  "comments": "Requerimientos de volumen de datos elevados",
+                  "weight": 0.20000000298023224,
+                  "score": 88,
+                  "weighted_score": 17
+                }
+              ]
+            },
+            {
+              "id": "f02a9819-9cdf-4d83-a408-5d0890625f41",
+              "name": "Ethics and Data Privacy",
+              "description": "",
+              "average_score": 100,
+              "kpi": [
+                {
+                  "id": "5a6154db-6d69-4c29-ac77-c4a5ef05c066",
+                  "name": "Compliance with Data Privacy Laws",
+                  "description": "Adherence to data protection regulations.",
+                  "comments": "Datos anonimizados",
+                  "weight": 0.30000001192092896,
+                  "score": 100,
+                  "weighted_score": 30
+                },
+                {
+                  "id": "adcd083e-e2fc-4ff4-89ae-8b4dbb916a77",
+                  "name": "Ethical Use of Data and AI",
+                  "description": "Assessment of ethical considerations in data and AI usage.",
+                  "comments": "No sean identificado situaciones éticas complejas",
+                  "weight": 0.20000000298023224,
+                  "score": 100,
+                  "weighted_score": 20
+                }
+              ]
+            }
+          ],
+          "cost": {
+            "fixedCost": 35000,
+            "variableCost": 0,
+            "help": "Real-Time Sensor/IoT Data (Dynamic Layer): Traffic Sensors (vehicle counting, congestion patterns), Environmental Sensors (air quality, rainfall, temperature), Infrastructure Monitoring (smart meters for energy consumption, water flow sensors), Social Media or Crowdsourced Data (optional for event detection or citizen perception analysis)."
+          }
+        }
+      ]
+    }
+  ]
+}
