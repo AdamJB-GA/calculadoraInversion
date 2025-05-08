@@ -44,13 +44,29 @@ export const HelpModal: React.FC<HelpModalProps> = ({ open, onClose, application
         </IconButton>
       </DialogTitle>
       <DialogContent dividers>
+
+        
+        {/* Descripcion */}
         <Typography variant="h6" gutterBottom>
           Descripción
         </Typography>
         <Typography paragraph>
           {application.description || 'No hay descripción disponible para esta aplicación.'}
         </Typography>
+
+
+        {/* Ayuda */}
+
+        <Typography variant="h6" gutterBottom>
+          Ayuda
+        </Typography>
+        <Typography paragraph>
+          {application.help || 'No hay ayuda disponible para esta aplicación.'}
+        </Typography>
         
+
+        {/* Si la aplicacion es capa dinamica se muestra */}
+
         {application.id === 'capa_dinamica' && (
           <>
             <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
@@ -63,6 +79,9 @@ export const HelpModal: React.FC<HelpModalProps> = ({ open, onClose, application
           </>
         )}
         
+
+        {/* Costo variable si se aplica */}
+
         {application.variableCost > 0 && (
           <>
             <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
@@ -75,6 +94,9 @@ export const HelpModal: React.FC<HelpModalProps> = ({ open, onClose, application
           </>
         )}
         
+
+        {/* Informacion de costos */}
+
         <Typography variant="h6" gutterBottom sx={{ mt: 2 }}>
           Información de costos
         </Typography>
